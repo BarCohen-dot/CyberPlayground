@@ -33,6 +33,8 @@ Support Team
 
 # Construct the email message
 message = MIMEMultipart()
+# message['From'] = "support@bank.com"  # Note: This From address can be spoofed in headers,
+                                        # but the actual sender (authenticated via Gmail SMTP) will be visible to the recipient.
 message['From'] = sender_email        # Set the spoofed sender
 message['To'] = recipient_email       # Set the recipient
 message['Subject'] = subject
@@ -40,11 +42,11 @@ message.attach(MIMEText(body, 'plain'))
 
 # Attempt to connect to an SMTP server and send the email
 try:
-    server = smtplib.SMTP("smtp.gmail.com", 587)  # Using Mailtrap SMTP for testing
+    server = smtplib.SMTP("smtp.gmail.com", 587)  # Using smtp.gmail.com SMTP for testing
     server.starttls()
     server.login("your_gmail_address@gmail.com", "your_app_password")
     text = message.as_string()
-    server.sendmail(sender_email, recipient_email, text)  # Send the message
+    server.sendmail("your_gmail_address@gmail.com", recipient_email, text)
     server.quit()
     print("Email sent successfully!")
 except Exception as e:
