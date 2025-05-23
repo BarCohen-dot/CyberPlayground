@@ -7,6 +7,8 @@ send deceptive emails using fake sender identities and suspicious links.
 
 🚫 Disclaimer: This script must not be used for any unauthorized or malicious activities.
 It is intended strictly for learning and ethical hacking practices within controlled environments.
+
+Author: Bar Cohen
 """
 
 import smtplib
@@ -38,9 +40,9 @@ message.attach(MIMEText(body, 'plain'))
 
 # Attempt to connect to an SMTP server and send the email
 try:
-    server = smtplib.SMTP('smtp.mailtrap.io', 587)  # Using Mailtrap SMTP for testing
-    server.starttls()                               # Enable encryption
-    server.login("your_username", "your_password")  # Replace with your Mailtrap credentials
+    server = smtplib.SMTP("smtp.gmail.com", 587)  # Using Mailtrap SMTP for testing
+    server.starttls()
+    server.login("your_gmail_address@gmail.com", "your_app_password")
     text = message.as_string()
     server.sendmail(sender_email, recipient_email, text)  # Send the message
     server.quit()
