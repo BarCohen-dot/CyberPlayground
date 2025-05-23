@@ -108,18 +108,6 @@ target_url = "http://example.com/search"
 
 ---
 
-## 📈 Screenshots
-
-### Vulnerability Scanner Output
-
-![Scanner Screenshot](https://user-images.githubusercontent.com/yourusername/vuln-scan-demo.png)
-
-### GitHub Repository Preview
-
-![GitHub Tree](https://user-images.githubusercontent.com/yourusername/repo-tree.png)
-
----
-
 ## 🔐 Permissions & Legal
 
 This project is released under the [MIT License](./LICENSE).
