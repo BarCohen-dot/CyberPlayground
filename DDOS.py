@@ -2,6 +2,7 @@
 ⚠️ DISCLAIMER:
 This script is for educational and ethical hacking learning purposes only.
 Do not use it against live systems or networks without explicit authorization.
+
 Author: Bar Cohen
 """
 
