@@ -4,6 +4,8 @@ This cheatsheet includes essential commands for wireless network auditing and WP
 
 > ⚠️ For educational and authorized penetration testing only.
 
+---
+
 ```bash
 # Step 1: Enable Monitor Mode
 sudo airmon-ng                       # List available wireless interfaces
