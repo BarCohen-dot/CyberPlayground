@@ -1,3 +1,12 @@
+# John the Ripper Cheatsheet — CyberPlayground
+
+This cheatsheet summarizes powerful `John the Ripper` commands used for password cracking, session recovery, resource optimization, and user-targeted attacks.
+
+> ⚠️ This tool and its usage are intended strictly for **educational**, **authorized**, and **ethical penetration testing** environments only.
+> Unauthorized use — even in private networks without consent — may be illegal and unethical.
+
+---
+
 ```bash
 # John the Ripper Cheatsheet
 
