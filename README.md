@@ -1,13 +1,13 @@
-# 🔧 CyberPlayground - Vulnerability & Attack Simulation Toolkit
+# CyberPlayground - Vulnerability & Attack Simulation Toolkit ☠️
 
 Welcome to **CyberPlayground**, an advanced multi-tool cybersecurity repository developed for educational and ethical testing purposes.
 This project contains a collection of Python-based scripts designed to scan, simulate, and test modern web application vulnerabilities such as XSS, SQLi, Command Injection, SSTI, and more.
 
-> 🚨 **DISCLAIMER**: This toolkit is for educational purposes only. Do not use it against systems without explicit authorization. Unauthorized testing is illegal and unethical.
+> **DISCLAIMER**: This toolkit is for educational purposes only. Do not use it against systems without explicit authorization. Unauthorized testing is illegal and unethical.
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```bash
 CyberPlayground/
@@ -23,9 +23,9 @@ CyberPlayground/
 
 ---
 
-## 🛡️ Core Tools Overview
+## Core Tools Overview
 
-### 🔐 `Bypass Injection Tool`
+### `Bypass Injection Tool`
 
 Tests login forms for bypass using payloads such as:
 
@@ -33,22 +33,22 @@ Tests login forms for bypass using payloads such as:
 * `' AND 1=0 UNION SELECT ...`
 * Hash injection using `md5()` and `sha1()`
 
-### 💣 `DDOS.py`
+### `DDOS.py`
 
 Simulates basic denial-of-service attacks by sending rapid repeated requests.
 
-### 📧 `Email_check.py`
+### `Email_check.py`
 
 Scans `.rtf` or `.txt` emails for:
 
 * Suspicious URLs
 * Phishing trigger words (e.g., "Verify your account", "Click here immediately")
 
-### 📩 `Phishing_send.py`
+### `Phishing_send.py`
 
 Sends a fake phishing-style email (via SMTP) for internal awareness simulations.
 
-### 🔢 `SQL_Injection.py`
+### `SQL_Injection.py`
 
 Injects a variety of SQLi payloads:
 
@@ -57,7 +57,7 @@ Injects a variety of SQLi payloads:
 * Union-based
 * Bypass authentication
 
-### 🔍 `XSS_scanner.py`
+### `XSS_scanner.py`
 
 Tests a list of reflected XSS payloads in a query parameter. Includes:
 
@@ -65,7 +65,7 @@ Tests a list of reflected XSS payloads in a query parameter. Includes:
 * `<img onerror>`
 * SVG payloads
 
-### ⚖️ `Vulnerability_Scanner.py` ✨
+### `Vulnerability_Scanner.py` 
 
 **The most advanced module**:
 
@@ -79,7 +79,7 @@ Tests a list of reflected XSS payloads in a query parameter. Includes:
 
 ---
 
-## 📖 Getting Started
+## Getting Started
 
 ### 1. Clone the repository
 
@@ -108,18 +108,18 @@ target_url = "http://example.com/search"
 
 ---
 
-## 🔐 Permissions & Legal
+## Permissions & Legal
 
 This project is released under the [MIT License](./LICENSE).
 
-* ✅ You may use, modify, and distribute this project.
-* ❌ You may **not** use it for illegal penetration testing.
+* You may use, modify, and distribute this project.
+* You may **not** use it for illegal penetration testing.
 
 If you are an instructor or security trainer, feel free to adapt this project for CTFs or labs with attribution.
 
 ---
 
-## 🚀 Author
+## Author
 
 Built with passion and curiosity by:
 **Bar Cohen**
