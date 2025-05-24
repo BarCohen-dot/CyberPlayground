@@ -1,46 +1,76 @@
-# 📡 Nmap Cheatsheet — CyberPlayground
+# Nmap Cheatsheet — CyberPlayground
 
-This file contains commonly used **Nmap commands** for network scanning, host discovery, and vulnerability enumeration.
+This cheatsheet contains essential `nmap` commands for scanning, enumeration, and vulnerability assessment.
 
-> ⚠️ For **ethical use only** in authorized environments.
+> ⚠️ For **educational and authorized use** only. Do **not** scan networks without permission.
 
 ---
 
-1. sudo nmap -sS -p 1-65535 10.0.0.0/24
-   - TCP SYN scan on all 65,535 ports in the subnet.
-   - Stealthy scan that does not complete connections.
+```bash
+# Basic Scanning
 
-2. sudo nmap -sU -p 1-65535 10.0.0.0/24
-   - UDP scan across all ports to detect services like DNS, DHCP.
+sudo nmap -sS -p 1-65535 10.0.0.0/24          # Stealth SYN scan on all ports
+sudo nmap -sT -p 1-65535 10.0.0.0/24          # Full TCP connect scan (reliable, less stealthy)
+sudo nmap -sU -p 1-65535 10.0.0.0/24          # UDP scan on all ports
 
-3. sudo nmap -A 10.0.0.0/24
-   - Aggressive scan: detects OS, versions, runs scripts & traceroute.
+sudo nmap -p- 192.168.1.1                     # Scan all ports on a single host
+sudo nmap -F 192.168.1.1                      # Fast scan (default top 100 ports)
 
-4. sudo nmap -sV 10.0.0.0/24
-   - Version detection on open ports.
+# Advanced Enumeration
 
-5. sudo nmap -O 10.0.0.0/24
-   - Operating system detection.
+sudo nmap -A 10.0.0.0/24                      # Aggressive scan (OS, services, scripts, traceroute)
+sudo nmap -sV 10.0.0.0/24                     # Service version detection
+sudo nmap -O 10.0.0.0/24                      # OS detection
+sudo nmap --top-ports 100 10.0.0.0/24         # Scan top 100 most common ports
+sudo nmap -T4 -sS 10.0.0.0/24                 # Faster execution with timing template (T0–T5)
 
-6. sudo nmap -sT -p 1-65535 10.0.0.0/24
-   - Full TCP connect scan (less stealthy, more reliable).
+# Host Discovery
 
-7. sudo nmap -p 53 --script=dns-zone-transfer example.com
-   - Tests for misconfigured DNS zone transfer on example.com.
+sudo nmap -sn 10.0.0.0/24                     # Ping scan (host discovery)
+sudo nmap -Pn 10.0.0.0/24                     # Treat all hosts as online (skip ping)
+sudo nmap -sn -n 192.168.1.0/24               # Discovery without DNS resolution
 
-8. Host Discovery Examples:
-   sudo nmap -sn 10.0.0.0/24
-   sudo nmap -p 80 10.0.0.0/24
-   sudo nmap -sn -Pn 10.0.0.0/24
-   sudo nmap -sn 10.10.40.254/24
-   sudo nmap -p- 10.10.40.254
-   - Performs ping scans to detect live hosts.
+# Vulnerability Scanning (Scripts)
 
-9. sudo nmap -sF -p 1-65535 10.0.0.0/24
-   - TCP FIN scan — stealthy way to identify open ports.
+sudo nmap --script vuln 192.168.1.1           # Run vulnerability detection scripts
+sudo nmap --script default 192.168.1.1        # Run default scripts
+sudo nmap --script safe 192.168.1.1           # Non-intrusive checks only
+sudo nmap -sV --script=http-vuln* 192.168.1.1 # HTTP-related vulnerabilities
+sudo nmap --script smb-vuln* 192.168.1.1      # SMB-related vulnerabilities
 
-10. sudo nmap -sN -p 1-65535 10.0.0.0/24
-    - TCP NULL scan — sends packets with no flags for OS-specific behavior.
+# Web & DNS Enumeration
 
-11. nmap -sS 192.168.1.0/24
-    - Basic SYN scan on a local subnet.
+sudo nmap -p 80,443 --script http-enum 192.168.1.1   # Web directory brute-forcing
+sudo nmap --script dns-zone-transfer -p 53 example.com  # Attempt zone transfer
+sudo nmap --script dns-brute example.com            # Subdomain brute-forcing
+
+# Firewall Evasion & Stealth
+
+sudo nmap -sS -T2 -f 10.0.0.0/24                     # Fragmented packets (IDS evasion)
+sudo nmap -sS --data-length 200 10.0.0.0/24          # Add padding to packets
+sudo nmap --source-port 53 10.0.0.0/24               # Spoof source port (e.g. DNS)
+sudo nmap -D RND:10 192.168.1.1                      # Decoy scan with 10 fake sources
+sudo nmap -S 192.168.1.100 192.168.1.1                # Spoof source IP
+
+# NSE (Nmap Scripting Engine) Examples
+
+sudo nmap --script ftp-anon,ftp-bounce 192.168.1.1   # FTP scan
+sudo nmap --script ssh2-enum-algos 192.168.1.1       # SSH algorithms
+sudo nmap --script ssl-cert,ssl-enum-ciphers 192.168.1.1  # SSL info
+sudo nmap --script smb-os-discovery 192.168.1.1      # SMB OS details
+
+# Output Formats
+
+sudo nmap -oN scan.txt 192.168.1.1                   # Normal output
+sudo nmap -oX scan.xml 192.168.1.1                   # XML output
+sudo nmap -oG scan.gnmap 192.168.1.1                 # Greppable output
+sudo nmap -oA full-scan 192.168.1.1                  # All formats combined
+
+# Misc & Quick Tips
+
+nmap -v                                               # Verbose mode
+nmap -6 2606:4700::6810:1348                          # IPv6 scan
+nmap --reason 192.168.1.1                             # Show why host is up
+nmap --script-help vuln                               # Show info on vulnerability scripts
+
+```
