@@ -3,7 +3,7 @@
 Welcome to **CyberPlayground**, an advanced multi-tool cybersecurity repository developed for educational and ethical testing purposes.
 This project contains a collection of Python-based scripts designed to scan, simulate, and test modern web application vulnerabilities such as XSS, SQLi, Command Injection, SSTI, and more.
 
-> **DISCLAIMER**: This toolkit is for educational purposes only. Do not use it against systems without explicit authorization. Unauthorized testing is illegal and unethical.
+> 🚨 **DISCLAIMER**: This toolkit is for educational purposes only. Do not use it against systems without explicit authorization. Unauthorized testing is illegal and unethical.
 
 ---
 
