@@ -4,6 +4,8 @@ This cheatsheet outlines powerful Google search operators (aka "Google Dorks") f
 
 > WARNING: Use these queries **only for educational purposes** and on **authorized environments**. Exploiting or scanning without consent is illegal.
 
+---
+
 ```
 # LEAK DETECTION & PASSWORD EXPOSURE
 site:pastebin.com "Microsoft" "password" OR "credentials"
