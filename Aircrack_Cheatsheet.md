@@ -5,7 +5,9 @@ This cheatsheet includes essential commands for wireless network auditing and WP
 bash
 # Step 1: Enable Monitor Mode
 sudo airmon-ng                       # List available wireless interfaces
+
 sudo airmon-ng start wlan0           # Start monitor mode on wlan0
+
 sudo airmon-ng stop wlan0mon         # Stop monitor mode (return to managed mode)
 
 # Step 2: Discover Wi-Fi Networks
