@@ -1,6 +1,6 @@
 # Aircrack-ng Cheatsheet
 
-This cheatsheet includes essential commands for wireless network auditing and WPA/WPA2 password cracking using the Aircrack-ng suite.
+This cheatsheet includes essential commands for wireless network auditing and WPA/WPA2 password cracking using the `Aircrack-ng` suite.
 
 > ⚠️ For educational and authorized penetration testing only.
 
