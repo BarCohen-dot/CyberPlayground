@@ -73,7 +73,7 @@ def attack():
             pass
 
 # Run 100 threads simultaneously
-#for i in range(100): # The note must be downloaded for use.
+# for i in range(100): # The note must be downloaded for use.
 #    t = threading.Thread(target=attack)
 #    t.start()
 
